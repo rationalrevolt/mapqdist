@@ -1,0 +1,16 @@
+Gem::Specification.new do |s|
+  s.name = 'mapqdist'
+  s.version = '0.0.1'
+  s.date = '2013-12-06'
+  s.summary = 'Find distances using MapQuest'
+  s.platform = Gem::Platform::RUBY
+  s.authors = ['Sankaranarayanan Viswanathan']
+  s.email = 'rationalrevolt@gmail.com'
+  s.required_ruby_version = '>= 1.9.2'
+
+  s.add_dependency 'httparty', '~> 0.12.0'
+
+  s.files = ['lib/mapqdist.rb']
+  s.executables = ['distance']
+  s.require_paths = ['lib']
+end

@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.join(File.dirname(__FILE__), '/../lib'))
+require 'mapqdist'
+
+usage = <<END
+Usage: #{$0} NJ CT
+(You need your MapQuest API key at ~/.mapquestkey)
+END
+
+args_present = ARGV[0] && ARGV[1]
+
+unless args_present
+  puts usage
+  exit
+end
+
+from_addr, to_addr = *ARGV[0..1]
+
+distance = MapQuest.distance(from_addr, to_addr)
+
+puts "#{distance} miles"
